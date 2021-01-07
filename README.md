@@ -3,6 +3,8 @@
 This is my submission for the SOC Winter project by WnCC IITB. Bascally, the project involves creating a model to detect the emotion of a face in a given 48-by-48 grayscale image using ConvNets, MaxPools, BatchNorms and Padding.
 This model is a deep CNN with 3-4 such blocks, because of which the model has many, many parameters to train.
 
+The training data was actually too big to be committed to Github, so here's the link for it: https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data?select=fer2013.tar.gz
+
 So, I used Kaggle's TPU here. It would be very difficult to run the training directly in the host system without some extra processing unit. The model has been trained to 20 epochs, and it has a great training accuracy of 92%. However, it has been overfit, (oops, I forgot to add dropouts:P) so during testing the model is likely to show errors when the facial expression isn't too easily seen, but mostly it's going to be neutral.
 
 Either way, the model was trained with the adam optimzer, and I saved into my host computer from Kaggle, where I used OpenCV to detect the user's face and the model to detect the expression of that face (again, not the most accuracy you could get).
